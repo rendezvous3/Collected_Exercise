@@ -129,9 +129,6 @@ function Adder(): JSX.Element {
     setDisableAdd(true);
   };
 
-  const ref1 = React.useRef();
-  const ref2 = React.useRef();
-
   return (
     <StyledContainer>
       <AdderDiv>

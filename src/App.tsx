@@ -1,25 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Adder from './components/Adder';
+import styled from 'styled-components';
 
-function App() {
+import { createGlobalStyle } from 'styled-components';
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background-color: #ececec;
+  }
+`;
+
+const AppStyle = styled.div`
+  text-align: center;
+  padding-top: 125px;
+`;
+
+function App(): JSX.Element {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppStyle>
+      <GlobalStyle />
+      <Adder />
+    </AppStyle>
   );
 }
 

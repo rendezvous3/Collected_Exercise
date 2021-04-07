@@ -4,9 +4,9 @@ import styled from 'styled-components';
 
 const StyledContainer = styled.div`
   background-color: rgb(252, 250, 250);
-  padding-top: 25px;
-  height: 325px;
-  width: 750px;
+  padding-top: 30px;
+  height: 300px;
+  width: 658px;
   display: grid;
   align-content: center;
   margin: 0 auto;
@@ -19,12 +19,13 @@ const AdderDiv = styled.div`
   align-content: start;
   grid-template-columns: repeat(5, 1fr);
   grid-auto-flow: column;
-  padding: 0 15%;
+  padding: 0 7%;
   min-height: 65px;
 `;
 
 const Operator = styled.span`
-  font-size: 35px;
+  font-size: 30px;
+  font-weight: 300;
   color: black;
   height: 100%;
   line-height: 100%;
@@ -32,21 +33,22 @@ const Operator = styled.span`
 `;
 
 const Buttons = styled.div`
-  width: 50%;
+  width: 45%;
   justify-self: end;
-  margin-right: 33px;
+  margin-right: 21px;
   position: relative;
   top: 63px;
 `;
 
 const StyledButton = styled.button`
   font-family: 'Roboto', sans-serif;
+  font-weight: 300;
   background-color: black;
-  color: white;
-  font-size: 17px;
-  margin: 5px 25px;
+  color: #bdbdbd;
+  font-size: 15px;
+  margin: 5px 21px;
   border-radius: 25px;
-  padding: 12px 35px;
+  padding: 12px 31px;
   min-width: 100px;
   border: 0;
   outline: none;
@@ -64,9 +66,9 @@ const Result = styled.div`
   border: 0;
   height: 1.1876em;
   margin: 0;
-  font-size: 35px;
   margin-top: -7px;
-  font-weight: 700;
+  font-size: 30px;
+  font-weight: 500;
 `;
 
 function Adder(): JSX.Element {

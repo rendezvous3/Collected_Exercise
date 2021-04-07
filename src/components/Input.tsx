@@ -9,11 +9,11 @@ const StyledTextField = styled(TextField)`
   }
   & .MuiInputBase-input,
   .MuiOutlinedInput-input {
-    font-size: 35px;
+    font-size: 30px;
     padding: 0;
     height: unset;
     text-align: center;
-    font-weight: 700;
+    font-weight: 500;
   }
   & {
     background: white;

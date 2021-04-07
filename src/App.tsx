@@ -6,7 +6,7 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
   body {
-    font-family: 'Noto Sans JP', sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
     background-color: #ececec;
   }
 `;

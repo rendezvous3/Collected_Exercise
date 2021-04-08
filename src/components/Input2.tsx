@@ -38,7 +38,7 @@ function Input2(): JSX.Element {
   const numberRegex = /^\d+$/;
   return (
     <Input
-      name='input1'
+      name='input2'
       label=''
       value={input2Value}
       onChange={handleChangeInput2}

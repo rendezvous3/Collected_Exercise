@@ -1,8 +1,7 @@
 import React from 'react';
-import Adder from './components/Adder';
 import styled from 'styled-components';
-
 import { createGlobalStyle } from 'styled-components';
+import Adder from './components/Adder';
 
 const GlobalStyle = createGlobalStyle`
   body {

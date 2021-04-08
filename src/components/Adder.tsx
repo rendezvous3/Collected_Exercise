@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
-import Input from './Input';
+import React from 'react';
 import styled from 'styled-components';
+import Buttons from './Buttons';
+import Input1 from './Input1';
+import Input2 from './Input2';
+import Result from './Result';
 
 const StyledContainer = styled.div`
   background-color: rgb(252, 250, 250);
-  padding-top: 30px;
+  padding-top: 36px;
   height: 300px;
   width: 658px;
   display: grid;
@@ -32,136 +35,17 @@ const Operator = styled.span`
   text-align: center;
 `;
 
-const Buttons = styled.div`
-  width: 45%;
-  justify-self: end;
-  margin-right: 21px;
-  position: relative;
-  top: 63px;
-`;
-
-const StyledButton = styled.button`
-  font-family: 'Roboto', sans-serif;
-  font-weight: 300;
-  background-color: black;
-  color: #bdbdbd;
-  font-size: 15px;
-  margin: 5px 21px;
-  border-radius: 25px;
-  padding: 12px 31px;
-  min-width: 100px;
-  border: 0;
-  outline: none;
-  &:hover {
-    cursor: pointer;
-  }
-`;
-
-const StyledButtonDisabled = styled(StyledButton)`
-  background-color: lightgray;
-`;
-
-const Result = styled.div`
-  width: 100%;
-  border: 0;
-  height: 1.1876em;
-  margin: 0;
-  margin-top: -7px;
-  font-size: 30px;
-  font-weight: 500;
-`;
-
 function Adder(): JSX.Element {
-  const [input1Value, setInput1Value] = useState<number | string>('');
-  const [input2Value, setInput2Value] = useState<number | string>('');
-  const [errorText1, setErrorText1] = useState<string>('');
-  const [errorText2, setErrorText2] = useState<string>('');
-  const [error1, setError1] = useState<boolean>(false);
-  const [error2, setError2] = useState<boolean>(false);
-  const [result, setResult] = useState<number | string>(0);
-  const [disableAdd, setDisableAdd] = useState<boolean>(true);
-
-  const numberRegex = /^\d+$/;
-
-  const handleChangeInput1 = (e: React.ChangeEvent<HTMLInputElement>): void => {
-    if (e.target.value === '' && input2Value === '') setDisableAdd(true);
-    else setDisableAdd(false);
-    if (e.target.value.match(numberRegex) || e.target.value === '') {
-      setErrorText1('');
-      setInput1Value(e.target.value);
-      setError1(false);
-    } else {
-      setError1(true);
-      setErrorText1('Numbers Only');
-      setInput1Value(e.target.value);
-    }
-  };
-
-  const handleChangeInput2 = (e: React.ChangeEvent<HTMLInputElement>): void => {
-    if (e.target.value === '' && input1Value === '') setDisableAdd(true);
-    else setDisableAdd(false);
-    if (e.target.value.match(numberRegex) || e.target.value === '') {
-      setErrorText2('');
-      setInput2Value(e.target.value);
-      setError2(false);
-    } else {
-      setError2(true);
-      setErrorText2('Numbers Only');
-      setInput2Value(e.target.value);
-    }
-  };
-
-  const addNumbers = (): void => {
-    if (input1Value === '' || input2Value === '' || error1 || error2) {
-      setResult(0);
-    } else {
-      const newResult = Number(input1Value) + Number(input2Value);
-      setResult(newResult);
-    }
-  };
-
-  const clearCalc = (): void => {
-    setError1(false);
-    setError2(false);
-    setErrorText1('');
-    setErrorText2('');
-    setResult(0);
-    setInput1Value('');
-    setInput2Value('');
-    setDisableAdd(true);
-  };
-
   return (
     <StyledContainer>
       <AdderDiv>
-        <Input
-          name='input1'
-          label=''
-          value={input1Value}
-          onChange={handleChangeInput1}
-          error={error1}
-          errorText={errorText1}
-        />
+        <Input1 />
         <Operator>+</Operator>
-        <Input
-          name='input1'
-          label=''
-          value={input2Value}
-          onChange={handleChangeInput2}
-          errorText={errorText2}
-          error={error2}
-        />
+        <Input2 />
         <Operator>=</Operator>
-        <Result>{result}</Result>
+        <Result />
       </AdderDiv>
-      <Buttons>
-        <StyledButton onClick={() => clearCalc()}>Clear</StyledButton>
-        {!disableAdd ? (
-          <StyledButton onClick={() => addNumbers()}>Add</StyledButton>
-        ) : (
-          <StyledButtonDisabled disabled>Add</StyledButtonDisabled>
-        )}
-      </Buttons>
+      <Buttons />
     </StyledContainer>
   );
 }

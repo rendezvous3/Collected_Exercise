@@ -9,7 +9,7 @@ const ResultStyled = styled.div`
   height: 1.1876em;
   margin: 0;
   margin-top: -7px;
-  font-size: 30px;
+  font-size: 28px;
   font-weight: 500;
 `;
 

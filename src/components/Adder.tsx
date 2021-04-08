@@ -7,8 +7,8 @@ import Result from './Result';
 
 const StyledContainer = styled.div`
   background-color: rgb(252, 250, 250);
-  padding-top: 36px;
-  height: 300px;
+  padding-top: 39px;
+  height: 312px;
   width: 658px;
   display: grid;
   align-content: center;
